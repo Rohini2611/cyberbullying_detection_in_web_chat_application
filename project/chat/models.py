@@ -1,0 +1,59 @@
+# from django.db import models
+# from datetime import datetime
+# from django.db.models import AutoField
+
+
+# # Create your models here.
+# class Room(models.Model):
+#     name = models.CharField(max_length=1000)
+# class Message(models.Model):
+#     value = models.CharField(max_length=1000000)
+#     date = models.DateTimeField(default=datetime.now, blank=True)
+#     user = models.CharField(max_length=1000000)
+#     room = models.CharField(max_length=1000000)
+
+# """
+# Module: models.py
+# Description: Contains the models for the chat application.
+# """
+
+# from datetime import datetime
+
+# from django.db import models
+
+
+# class Room(models.Model):
+#     name = models.CharField(max_length=1000)
+
+
+# class Message(models.Model):
+#     value = models.CharField(max_length=1000000)
+#     date = models.DateTimeField(default=datetime.now, blank=True)
+#     user = models.CharField(max_length=1000000)
+#     room = models.CharField(max_length=1000000)
+
+
+"""
+Module: models.py
+Description: Contains the models for the chat application.
+"""
+
+from django.db import models
+from datetime import datetime
+
+
+class Room(models.Model):
+    """
+    Represents a chat room.
+    """
+    name = models.CharField(max_length=1000)
+
+
+class Message(models.Model):
+    """
+    Represents a message in a chat room.
+    """
+    value = models.CharField(max_length=1000000)
+    date = models.DateTimeField(default=datetime.now, blank=True)
+    user = models.CharField(max_length=1000000)
+    room = models.CharField(max_length=1000000)
